@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    jdbc-url: jdbc:postgresql://${DB_URL}
+    jdbcUrl: jdbc:postgresql://${DB_URL}
+    url: jdbc:postgresql://${DB_URL}
+    username: postgres
+    password: postgres
+    hikari:
+      maximum-pool-size: 10
