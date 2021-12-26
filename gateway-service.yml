@@ -2,11 +2,11 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: learning-center-service
-        uri: lb://learning-center-service
-        predicates:
-          - Path=/api/**
-      - id: paymentService
-        uri: lb://PAYMENT-SERVICE
-        predicates:
-          - Path=/payment/**
+        - id: learning-center-service
+          uri: lb://learning-center-service
+          predicates:
+            - Path=/api/**
+        - id: paymentService
+          uri: lb://PAYMENT-SERVICE
+          predicates:
+            - Path=/payment/**
