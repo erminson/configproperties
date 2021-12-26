@@ -2,8 +2,8 @@ spring:
   cloud:
     gateway:
       routes:
-      - id: learningCenter
-        uri: lb://LEARNING-CENTER-SERVICE
+      - id: learning-center-service
+        uri: lb://learning-center-service
         path: /api/**
       - id: paymentService
         uri: lb://PAYMENT-SERVICE
