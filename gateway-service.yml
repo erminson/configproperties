@@ -1,6 +1,14 @@
 spring:
   cloud:
     gateway:
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:8080"
+            allowedHeaders:
+              - Content-Type
+              - Authorization
       routes:
         - id: learning-center-service
           uri: lb://learning-center-service
