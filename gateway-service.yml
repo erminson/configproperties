@@ -4,9 +4,7 @@ spring:
       routes:
       - id: learningCenter
         uri: lb://LEARNING-CENTER-SERVICE
-        predicates:
-        - Path=/api/**
+        path: /api/**
       - id: paymentService
         uri: lb://PAYMENT-SERVICE
-        predicates:
-        - Path=/payment/**
+        path: /payment/**
