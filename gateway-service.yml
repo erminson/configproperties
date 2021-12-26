@@ -11,7 +11,7 @@ spring:
               - Authorization
       routes:
         - id: learning-center-service
-          uri: lb://learning-center-service
+          uri: lb://LEARNING-CENTER-SERVICE
           predicates:
             - Path=/api/**
         - id: paymentService
