@@ -11,12 +11,14 @@ spring:
               - Authorization
       routes:
         - id: learning-center-service
-          uri: lb://LEARNING-CENTER-SERVICE
+          uri: lb://learning-center-service
           predicates:
             - Path=/api/**
           filters:
             - StripPrefix=1
-        - id: paymentService
-          uri: lb://PAYMENT-SERVICE
+        - id: payment-service
+          uri: lb://payment-service
           predicates:
             - Path=/payment/**
+          filters:
+            - StripPrefix=1
