@@ -1,8 +1,12 @@
-zuul:
-  ignoredServices: '*'
-  host:
-    connect-timeout-millis: 20000
-    socket-timeout-millis: 20000
-
-  routes:
-    learning-center-service: /api/**
+spring:
+  cloud:
+    gateway:
+      routes:
+      - id: learningCenter
+        uri: lb://learning-center-service
+        predicates:
+        - Path=/api/**
+      - id: paymentService
+        uri: lb://payment-service
+        predicates:
+        - Path=/payment/**
