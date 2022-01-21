@@ -8,3 +8,8 @@ spring:
     password: postgres
     hikari:
       maximum-pool-size: 10
+
+logback:
+  destination:
+    url: docker-elk_logstash_1
+    port: 5000
