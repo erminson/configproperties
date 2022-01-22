@@ -1,0 +1,15 @@
+spring:
+  datasource:
+    driverClassName: org.postgresql.Driver
+    jdbc-url: jdbc:postgresql://${DB_URL}       #lc-postgres:5432/lc-db
+    jdbcUrl: jdbc:postgresql://${DB_URL}
+    url: jdbc:postgresql://${DB_URL}
+    username: postgres
+    password: postgres
+    hikari:
+      maximum-pool-size: 10
+
+logback:
+  destination:
+    url: localhost
+    port: 5000
