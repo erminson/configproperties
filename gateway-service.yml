@@ -1,0 +1,43 @@
+server:
+  port: 8080
+
+management.endpoint.gateway.enabled: true # default value
+management.endpoints.web.exposure.include: gateway
+
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl:
+      defaultZone: ${DISCOVERY_URL:http://localhost:8761/eureka/}
+
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      globalcors:
+        corsConfigurations:
+          '[/**]':
+            allowedOrigins:
+              - "http://localhost:8080"
+            allowedHeaders:
+              - Content-Type
+              - Authorization
+      routes:
+        - id: learning-center-service
+          uri: lb://learning-center-service
+          predicates:
+            - Path=/api/**
+          filters:
+            - StripPrefix=1
+        - id: payment-service
+          uri: lb://payment-service
+          predicates:
+            - Path=/payment/**
+          filters:
+            - StripPrefix=1
