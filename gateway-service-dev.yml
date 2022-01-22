@@ -26,3 +26,8 @@ spring:
             - Path=/payment/**
           filters:
             - StripPrefix=1
+
+logback:
+  destination:
+    url: localhost
+    port: 5000
