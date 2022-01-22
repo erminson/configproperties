@@ -1,0 +1,4 @@
+logback:
+  destination:
+    url: docker-elk_logstash_1
+    port: 5000
