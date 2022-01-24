@@ -29,6 +29,7 @@ logging:
   packages:
     - ru.erminson.lc.repository
     - ru.erminson.lc.service
+    - ru.erminson.lc.soap
 
 soap:
   payment-url: ${PAYMENT_URL}
