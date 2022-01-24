@@ -11,6 +11,9 @@ eureka:
       defaultZone: ${DISCOVERY_URL:http://localhost:8761/eureka/}
 
 spring:
+  sleuth:
+    sampler:
+      percentage: 1
   datasource:
     driverClassName: org.postgresql.Driver
     jdbc-url: jdbc:postgresql://${DB_URL}
